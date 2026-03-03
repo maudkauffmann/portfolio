@@ -1,0 +1,268 @@
+:root {
+    --bg-navy: #0a192f;
+    --light-navy: #112240;
+    --gold: #D9B642;
+    --light-slate: #ccd6f6;
+    --slate: #8892b0;
+    --nav-height: 80px;
+}
+
+/* --- BASE & SCROLL --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-height);
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-navy) !important;
+    color: var(--slate);
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
+.nav-link, .btn-resume, .btn-big-gold, .github-btn { font-family: 'Open Sans', sans-serif; font-weight: 600; }
+.font-monospace { font-family: 'SF Mono', monospace; font-size: 13px; }
+
+/* --- NAVIGATION --- */
+.custom-nav {
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    height: var(--nav-height);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 1000;
+}
+.navbar-nav { flex-direction: row !important; }
+.nav-link { color: var(--light-slate) !important; font-size: 13px; }
+.nav-link:hover { color: var(--gold) !important; }
+.nav-number { color: var(--gold); margin-right: 5px; }
+
+.btn-resume {
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 7px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+.btn-resume:hover { background: rgba(217, 182, 66, 0.1); }
+
+/* --- LAYOUT --- */
+.full-section {
+    min-height: 100vh;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section[id] { scroll-margin-top: 100px; }
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    color: var(--light-slate);
+    font-size: clamp(26px, 5vw, 32px);
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 1px;
+    background-color: #233554;
+    margin-left: 20px;
+}
+
+/* --- SKILLS --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.skill-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--light-navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    transition: 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.skill-item:hover .skill-circle {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.skill-name {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--light-slate);
+    font-weight: 600;
+}
+
+/* --- PROJECTS --- */
+.project-card {
+    background-color: var(--light-navy);
+    padding: 2rem;
+    border-radius: 4px;
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:hover { transform: translateY(-7px); border-bottom: 3px solid var(--gold); }
+
+.project-description-box {
+    background-color: #172a45;
+    border-radius: 4px;
+    padding: 20px;
+    color: var(--light-slate);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    margin: 1.5rem 0;
+}
+
+.badge-skill {
+    background-color: rgba(217, 182, 66, 0.05);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.3s;
+}
+.badge-skill:hover { background-color: rgba(217, 182, 66, 0.1); transform: translateY(-2px); }
+
+/* --- BUTTONS --- */
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--gold) !important;
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.github-btn:hover { background: rgba(217, 182, 66, 0.1); }
+
+.github-profile-btn {
+    color: var(--gold);
+    background-color: transparent;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 1.25rem 1.75rem;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+.github-profile-btn:hover {
+    background-color: rgba(217, 182, 66, 0.1);
+    transform: translateY(-3px);
+}
+
+.btn-big-gold {
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    padding: 1.25rem 1.75rem;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.btn-big-gold:hover { background: rgba(217, 182, 66, 0.1); }
+
+/* --- CONTACT FORM --- */
+.contact-form {
+    margin-top: 30px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-family: 'SF Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.custom-input {
+    background-color: var(--light-navy) !important;
+    border: 1px solid #233554 !important;
+    color: var(--light-slate) !important;
+    border-radius: 4px;
+    padding: 15px !important;
+    font-family: 'Open Sans', sans-serif;
+    transition: 0.3s ease;
+}
+
+.custom-input:focus {
+    outline: none;
+    border-color: var(--gold) !important;
+    background-color: #172a45 !important;
+    box-shadow: 0 0 10px rgba(217, 182, 66, 0.1) !important;
+}
+
+.custom-input::placeholder {
+    color: var(--slate);
+    opacity: 0.5;
+}
+
+/* --- UTILS --- */
+.text-gold { color: var(--gold) !important; }
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+S.flag-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--light-navy);
+}
+
+.flag-circle img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
