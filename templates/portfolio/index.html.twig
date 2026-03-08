@@ -3,8 +3,8 @@
 {% block body %}
     <main class="container-fluid p-0">
         <section id="hero" class="full-section" style="min-height: 75vh; padding-top: 120px; padding-bottom: 50px;">
-            <p class="text-gold mb-3 font-monospace">Bienvenue sur mon portefolio</p>
-            <h1 class="display-1 text-light fw-bold" style="font-family: 'Playfair Display';">Maud Kauffmann</h1>
+            <p class="text-gold mb-3 font-monospace">Bienvenue sur mon portfolio</p>
+            <h1 class="display-1 text-light fw-bold" style="font-family: 'Playfair Display';">Maud Kauffmann.</h1>
             <div class="mt-4" style="max-width: 580px;">
                 <p class="lead text-slate">Étudiante en <span class="text-gold">IUT Informatique</span>. Je transforme des idées complexes en expériences numériques accessibles.</p>
             </div>
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-10">
                     <div class="reveal" style="transition-delay: 0.1s;">
-                        <h5 class="text-gold font-monospace mb-4 small">/ Développement & Web</h5>
+                        <h5 class="text-gold font-monospace mb-4 small">/ Développement & Web <span class="text-slate opacity-50 ms-2">— Acquis en cursus IUT</span></h5>
                         <div class="d-flex flex-wrap gap-5 mb-5">
                             <div class="skill-item">
                                 <div class="skill-circle"><i class="bi bi-code-slash"></i></div>
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="reveal" style="transition-delay: 0.2s;">
-                        <h5 class="text-gold font-monospace mb-4 small">/ Data & Systèmes</h5>
+                        <h5 class="text-gold font-monospace mb-4 small">/ Data & Systèmes <span class="text-slate opacity-50 ms-2">— Projets académiques</span></h5>
                         <div class="d-flex flex-wrap gap-5 mb-5">
                             <div class="skill-item">
                                 <div class="skill-circle"><i class="bi bi-database"></i></div>
@@ -61,39 +61,17 @@
                     </div>
 
                     <div class="reveal" style="transition-delay: 0.3s;">
-                        <h5 class="text-gold font-monospace mb-4 small">/ Gestion & Outils Techniques</h5>
-                        <div class="d-flex flex-wrap gap-5">
-                            <div class="skill-item">
-                                <div class="skill-circle"><i class="bi bi-git"></i></div>
-                                <span class="skill-name">Git / GitHub</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-circle"><i class="bi bi-kanban"></i></div>
-                                <span class="skill-name">Agile / Planner</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-circle"><i class="bi bi-file-earmark-text"></i></div>
-                                <span class="skill-name">LaTeX / Word</span>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-circle"><i class="bi bi-cpu"></i></div>
-                                <span class="skill-name">CAO (Charly)</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal" style="transition-delay: 0.4s;">
-                        <h5 class="text-gold font-monospace mb-4 small mt-5">/ Langues</h5>
+                        <h5 class="text-gold font-monospace mb-4 small">/ Langues <span class="text-slate opacity-50 ms-2">— Certifications</span></h5>
                         <div class="d-flex flex-wrap gap-5">
                             <div class="skill-item">
                                 <div class="skill-circle flag-circle">
-                                    <img src="https://flagcdn.com/w80/gb.png" alt="UK">
+                                    <img src="https://flagcdn.com/w80/gb.png" alt="Certification Anglais C1">
                                 </div>
                                 <span class="skill-name">Anglais C1</span>
                             </div>
                             <div class="skill-item">
                                 <div class="skill-circle flag-circle">
-                                    <img src="https://flagcdn.com/w80/de.png" alt="DE">
+                                    <img src="https://flagcdn.com/w80/de.png" alt="Certification Allemand B2">
                                 </div>
                                 <span class="skill-name">Allemand B2</span>
                             </div>
@@ -106,28 +84,29 @@
         <section id="projects" class="full-section" style="min-height: auto; padding-top: 80px; padding-bottom: 80px;">
             <h3 class="section-heading mb-5 reveal"><span class="nav-number">02.</span> Mes Projets</h3>
 
-            <div class="project-card mb-5 reveal">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <p class="text-gold mb-1 small font-monospace">Projet Phare (Groupe)</p>
-                        <h4 class="text-light fw-bold">SacréeTech - Gestion d'Association</h4>
-                        <div class="project-description-box py-3 px-4 my-3">
-                            Application complète de gestion de membres et d'évènements avec sécurité Symfony.
+            <div class="row mb-5 reveal"> <div class="col-12"> <div class="project-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <p class="text-gold mb-1 small font-monospace">Projet d'équipe</p>
+                                <h4 class="text-light fw-bold">SacréeTech - Gestion d'association</h4>
+                                <div class="project-description-box py-3 px-4 my-3">
+                                    Application complète de gestion de membres et d'événements avec sécurité Symfony.
+                                </div>
+                                <div class="d-flex flex-wrap gap-2 mt-3">
+                                    <span class="badge-skill">PHP / Symfony</span>
+                                    <span class="badge-skill">JS / React</span>
+                                    <span class="badge-skill">SQL / Oracle</span>
+                                    <span class="badge-skill">Git / GitHub</span>
+                                    <span class="badge-skill">Agile / Planner</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="https://github.com/maudkauffmann/sacreeTech_app.git" target="_blank" class="github-btn px-3 py-2">
+                                    <i class="bi bi-github me-2"></i> GitHub
+                                </a>
+                            </div>
                         </div>
-                        <div class="d-flex flex-wrap gap-2 mt-3">
-                            <span class="badge-skill">PHP / Symfony</span>
-                            <span class="badge-skill">JS / React</span>
-                            <span class="badge-skill">SQL / Oracle</span>
-                            <span class="badge-skill">Git / GitHub</span>
-                            <span class="badge-skill">Agile / Planner</span>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-md-end">
-                        <a href="https://github.com/maudkauffmann/sacreeTech_app.git" target="_blank" class="github-btn px-3 py-2">
-                            <i class="bi bi-github me-2"></i> GitHub
-                        </a>
-                    </div>
-                </div>
+                    </div> </div>
             </div>
 
             <div class="row g-4 mt-2">
@@ -149,6 +128,7 @@
                             <span class="badge-skill">PHP / Symfony</span>
                             <span class="badge-skill">SQL / Oracle</span>
                             <span class="badge-skill">Git / GitHub</span>
+                            <span class="badge-skill">Agile / Planner</span>
                         </div>
                     </div>
                 </div>
@@ -174,89 +154,84 @@
                     </div>
                 </div>
             </div>
-
             <div class="text-center mt-5 reveal">
-                <a href="https://github.com/maudkauffmann" target="_blank" class="github-profile-btn py-3 px-5">
+                <a href="https://github.com/maudkauffmann" target="_blank" class="github-profile-btn">
                     <i class="bi bi-github me-2"></i> Voir plus de projets sur GitHub
                 </a>
             </div>
         </section>
 
-        <section id="contact" class="full-section reveal" style="min-height: auto; padding-top: 80px; padding-bottom: 120px; position: relative;">
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-8">
-                    <form action="https://formsubmit.co/maudkau@gmail.com" method="POST" class="project-card p-4">
-                        <input type="hidden" name="_subject" value="Nouveau message de votre Portfolio !">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="{{ url('app_home') }}"> <div class="row g-3">
-                            <div class="col-md-6 text-start">
-                                <label class="text-gold small font-monospace mb-2">Votre Nom</label>
-                                <input type="text" name="name" class="form-control bg-dark text-light border-secondary" required placeholder="Nom Prénom">
+        <section id="contact" class="full-section">
+            <h2 class="section-heading d-inline-block">
+                <span class="nav-number text-gold">03.</span>Me contacter
+            </h2>
+            <div class="reveal text-center mb-5">
+                <p class="text-slate mx-auto mt-3" style="max-width: 600px; font-size: 1.1rem;">
+                    Je suis actuellement à la recherche de nouvelles opportunités.
+                    Que vous ayez une question ou que vous vouliez simplement me saluer, je vous répondrai avec plaisir !
+                </p>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <form action="https://formsubmit.co/maudkau@gmail.com" method="POST" class="glass-panel p-5 reveal">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="small text-gold mb-2 font-monospace">Nom</label>
+                                    <input type="text" name="name" class="form-control custom-input" placeholder="Votre nom" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="small text-gold mb-2 font-monospace">Email</label>
+                                    <input type="email" name="email" class="form-control custom-input" placeholder="Votre email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="small text-gold mb-2 font-monospace">Message</label>
+                                    <textarea name="message" class="form-control custom-input" rows="5" placeholder="Votre message..." required></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <div class="col-12 text-center mt-4">
+                                        <button type="submit" class="btn-big-gold px-5 py-3">Envoyer le message</button>
+                                        <p class="text-slate mt-2" style="font-size: 0.75rem; opacity: 0.6;">
+                                            En envoyant ce message, vous acceptez que vos données soient traitées pour répondre à votre demande.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 text-start">
-                                <label class="text-gold small font-monospace mb-2">Votre Email</label>
-                                <input type="email" name="email" class="form-control bg-dark text-light border-secondary" required placeholder="exemple@mail.com">
+                        </form>
+
+                        <div class="reveal mt-5 pt-5 border-top border-dark-subtle">
+                            <div class="text-center mb-5">
+                                <p class="text-gold font-monospace small">
+                                    Retrouvez-moi également ici :
+                                </p>
                             </div>
-                            <div class="col-12 text-start">
-                                <label class="text-gold small font-monospace mb-2">Message</label>
-                                <textarea name="message" rows="4" class="form-control bg-dark text-light border-secondary" required placeholder="Votre projet ou proposition..."></textarea>
-                            </div>
-                            <div class="col-12 mt-4">
-                                <button type="submit" class="btn-big-gold w-100 py-3">
-                                    <i class="bi bi-send-fill me-2"></i> Envoyer le message
+
+                            <div class="d-flex flex-wrap justify-content-center gap-4">
+                                <a href="tel:+33670566723" class="contact-pill">
+                                    <i class="bi bi-telephone-fill me-2"></i> 06 70 56 67 23
+                                </a>
+
+                                <a href="https://www.linkedin.com/in/maudkauffmann" target="_blank" class="contact-pill">
+                                    <i class="bi bi-linkedin me-2"></i> LinkedIn
+                                </a>
+
+                                <a href="mailto:maudkau@gmail.com" class="contact-pill">
+                                    <i class="bi bi-envelope-fill me-2"></i> Mail Direct
+                                </a>
+
+                                <button onclick="copyEmail()" class="contact-pill">
+                                    <i class="bi bi-clipboard-check me-2"></i> Copier l'email
                                 </button>
                             </div>
+
+                            <div id="copy-success" class="text-gold small text-center mt-4" style="display: none; font-family: 'SF Mono', monospace; letter-spacing: 0.5px;">
+                                <i class="bi bi-check2-circle me-1"></i> Email copié dans le presse-papier !
+                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-
-            <div class="d-flex justify-content-center gap-4 mt-4">
-                <a href="tel:+33600000000" class="text-slate small text-decoration-none">
-                    <i class="bi bi-telephone me-1"></i> Appeler directement
-                </a>
-                <span class="text-slate opacity-25">|</span>
-                <button onclick="copyEmail()" class="btn btn-link text-slate small text-decoration-none p-0">
-                    <i class="bi bi-clipboard me-1"></i> Copier l'email
-                </button>
-            </div>
         </section>
-
-        <script>
-            function copyEmail() {
-                const email = "maudkau@gmail.com";
-                navigator.clipboard.writeText(email).then(() => {
-                    const successMsg = document.getElementById('copy-success');
-                    successMsg.style.display = 'block';
-                    setTimeout(() => {
-                        successMsg.style.display = 'none';
-                    }, 3000);
-                });
-            }
-
-            function reveal() {
-                const reveals = document.querySelectorAll(".reveal");
-
-                for (let i = 0; i < reveals.length; i++) {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 100;
-
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add("active");
-                    }
-                }
-            }
-
-            window.addEventListener("scroll", reveal);
-            window.addEventListener("load", reveal);
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function () {
-                    setTimeout(reveal, 200);
-                    setTimeout(reveal, 500);
-                    setTimeout(reveal, 1000);
-                });
-            });
-        </script>
     </main>
 {% endblock %}
