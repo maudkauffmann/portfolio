@@ -488,3 +488,27 @@ noscript .reveal { opacity: 1 !important; }
         transition: 0.3s;
     }
 }
+
+@media (min-width: 1400px) {
+    /* Élargit le conteneur de la nav pour utiliser tout l'écran */
+    .custom-nav .container {
+        max-width: 95% !important;
+        padding: 0 40px;
+    }
+
+    /* Augmente l'espace entre le logo et le bloc de menus */
+    .custom-nav.navbar {
+        justify-content: space-between;
+    }
+
+    /* Espace massif entre les onglets 01, 02, 03 */
+    .custom-nav .navbar-nav {
+        gap: 6rem !important;
+    }
+
+    /* Texte plus lisible sur grand écran */
+    .nav-link {
+        font-size: 15px !important;
+        letter-spacing: 1.5px;
+    }
+}
