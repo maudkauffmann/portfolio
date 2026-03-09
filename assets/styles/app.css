@@ -28,7 +28,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
     backdrop-filter: blur(10px);
     height: var(--nav-height);
     display: flex;
-    align-items: center; /* Centre verticalement le contenu */
+    align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
     transition: all 0.3s ease-in-out;
@@ -104,10 +104,11 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
     border: 2px solid transparent;
 }
 
+/* --- MODIFICATION DÉLAI CERCLE --- */
 .skill-item:hover .skill-circle {
-    transform: translateY(-7px);
+    transform: scale(0.9);
     border-color: var(--gold);
-    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition-delay: 0.25s; /* Attend 0.5s avant de rétrécir */
 }
 
 .skill-name {
@@ -390,32 +391,27 @@ section[id] {
     font-weight: 600;
 }
 
-/* Si le JS ne charge pas, on montre tout quand même */
 @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; }
 }
 noscript .reveal { opacity: 1 !important; }
 
-/* Container principal pour tes 5 logos */
 .skills-grid-row {
     display: grid;
-    /* On crée 3 colonnes égales pour aligner les 3 premiers */
     grid-template-columns: repeat(3, 1fr);
-    /* Espace entre les logos (horizontal et vertical) */
     gap: 40px 20px;
     align-items: start;
     margin-bottom: 50px;
 }
 
-/* Chaque bloc de compétence */
 .skill-item {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre tout sous le logo */
+    align-items: center;
     text-align: center;
 }
 
-/* Style des listes de projets centrées */
+/* --- MODIFICATION DÉLAI DÉPLOIEMENT --- */
 .skill-details {
     max-height: 0;
     overflow: hidden;
@@ -426,9 +422,17 @@ noscript .reveal { opacity: 1 !important; }
     font-family: 'Raleway', sans-serif;
     font-size: 0.85rem;
     color: var(--slate);
-    text-align: center; /* Centrage du texte par rapport au logo */
+    text-align: center;
     transition: all 0.5s ease-in-out;
+    transition-delay: 0s; /* Fermeture instantanée */
     width: 100%;
+}
+
+.skill-item:hover .skill-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+    transition-delay: 0.5s; /* Ouverture après 0.5s */
 }
 
 .skill-details li {
@@ -437,25 +441,12 @@ noscript .reveal { opacity: 1 !important; }
     line-height: 1.4;
 }
 
-/* Petite puce dorée centrée */
 .skill-details li::before {
     content: "•";
     color: var(--gold);
     margin-right: 5px;
 }
 
-/* Effet au survol : pousse le contenu du dessous */
-.skill-item:hover .skill-details {
-    max-height: 500px;
-    opacity: 1;
-    margin-top: 15px;
-}
-
-.skill-item:hover .skill-circle {
-    transform: scale(0.9);
-    border-color: var(--gold);
-}
-/* Responsive : Passage en 2 colonnes sur tablette, 1 sur mobile */
 @media (max-width: 992px) {
     .skills-grid-row { grid-template-columns: repeat(2, 1fr); }
 }
@@ -463,52 +454,115 @@ noscript .reveal { opacity: 1 !important; }
     .skills-grid-row { grid-template-columns: 1fr; }
 }
 
-/* Optimisation pour les grands écrans (Desktop) */
 @media (min-width: 1200px) {
     .custom-nav .container {
-        /* On élargit l'espace entre le logo et les menus */
         padding-left: 2rem;
         padding-right: 2rem;
     }
-
     .custom-nav .navbar-nav {
-        /* On augmente l'espace entre chaque onglet (01, 02, etc.) */
         gap: 3rem !important;
     }
-
     .nav-link {
-        /* On augmente légèrement la taille du texte pour l'équilibre visuel */
         font-size: 15px !important;
         letter-spacing: 1px;
     }
-
     .navbar-brand img {
-        /* On agrandit un peu le logo pour qu'il ne paraisse pas minuscule */
         height: 45px !important;
         transition: 0.3s;
     }
 }
 
 @media (min-width: 1400px) {
-    /* Élargit le conteneur de la nav pour utiliser tout l'écran */
     .custom-nav .container {
         max-width: 95% !important;
         padding: 0 40px;
     }
-
-    /* Augmente l'espace entre le logo et le bloc de menus */
     .custom-nav.navbar {
         justify-content: space-between;
     }
-
-    /* Espace massif entre les onglets 01, 02, 03 */
     .custom-nav .navbar-nav {
         gap: 6rem !important;
     }
-
-    /* Texte plus lisible sur grand écran */
     .nav-link {
         font-size: 15px !important;
         letter-spacing: 1.5px;
+    }
+}
+
+/* --- OPTIMISATION SPÉCIFIQUE ÉCRANS IUT (1920x1080) --- */
+@media (min-width: 1400px) {
+    /* 1. Base globale pour un effet "Zoom" propre */
+    html {
+        font-size: 18px;
+    }
+
+    /* 2. Navbar : Utilisation de toute la largeur et gros espacements */
+    .custom-nav .container {
+        max-width: 95% !important;
+        padding: 0 40px;
+    }
+    .custom-nav.navbar {
+        justify-content: space-between;
+    }
+    .custom-nav .navbar-nav {
+        gap: 6rem !important;
+    }
+    .nav-link {
+        font-size: 16px !important;
+        letter-spacing: 1.5px;
+    }
+    .navbar-brand img {
+        height: 50px !important;
+    }
+
+    /* 3. Titres de sections (01. Mes Compétences) */
+    .section-heading {
+        font-size: 38px !important;
+        margin-bottom: 60px;
+    }
+
+    /* 4. AJOUT : Lignes de catégories (/ Développement & Web, etc.) */
+    /* On cible le texte qui contient le "/" jaune et le texte gris à côté */
+    .full-section p.font-monospace,
+    .full-section .text-gold + span,
+    [class*="section-subtitle"] {
+        font-size: 1.1rem !important; /* Agrandit le titre de la catégorie */
+        margin-bottom: 2rem !important;
+        display: block;
+    }
+
+    /* Si tu utilises une classe spécifique pour le texte gris "Acquis en cursus..." */
+    .text-slate.opacity-75 {
+        font-size: 1rem !important;
+        letter-spacing: 0.5px;
+    }
+
+    /* 5. Grille et Cercles de compétences */
+    .skills-grid-row {
+        gap: 70px 40px;
+        max-width: 1250px;
+        margin: 0 auto 80px auto;
+    }
+
+    .skill-circle {
+        width: 125px !important;
+        height: 125px !important;
+        font-size: 3.2rem !important;
+    }
+
+    .skill-name {
+        font-size: 1.25rem !important; /* Nom du langage bien visible */
+        margin-top: 15px;
+    }
+
+    .skill-details {
+        font-size: 1.1rem !important; /* Liste des projets très lisible */
+        line-height: 1.6;
+    }
+
+    /* 6. Bouton CV */
+    .btn-resume {
+        padding: 12px 28px !important;
+        font-size: 15px !important;
     }
 }
