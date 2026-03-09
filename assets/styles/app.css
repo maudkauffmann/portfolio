@@ -4,7 +4,7 @@
     --gold: #D9B642;
     --light-slate: #ccd6f6;
     --slate: #8892b0;
-    --nav-height: 80px;
+    --nav-height: 100px;
 }
 
 html {
@@ -27,8 +27,11 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Playfair Display', serif; }
     background: rgba(10, 25, 47, 0.85);
     backdrop-filter: blur(10px);
     height: var(--nav-height);
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu */
     border-bottom: 1px solid rgba(255,255,255,0.05);
     z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
 .navbar-nav { flex-direction: row !important; }
 .nav-link { color: var(--light-slate) !important; font-size: 13px; }
@@ -393,58 +396,95 @@ section[id] {
 }
 noscript .reveal { opacity: 1 !important; }
 
-/* --- Animation des compétences --- */
+/* Container principal pour tes 5 logos */
+.skills-grid-row {
+    display: grid;
+    /* On crée 3 colonnes égales pour aligner les 3 premiers */
+    grid-template-columns: repeat(3, 1fr);
+    /* Espace entre les logos (horizontal et vertical) */
+    gap: 40px 20px;
+    align-items: start;
+    margin-bottom: 50px;
+}
 
+/* Chaque bloc de compétence */
 .skill-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-width: 140px; /* Un peu plus large pour stabiliser le texte */
-    transition: all 0.3s ease;
+    align-items: center; /* Centre tout sous le logo */
+    text-align: center;
 }
 
-/* Cache les détails par défaut */
+/* Style des listes de projets centrées */
 .skill-details {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     list-style: none;
     padding: 0;
-    margin: 0;
-    font-size: 0.75rem;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
     color: var(--slate);
-    text-align: center;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-    width: 180px;
+    text-align: center; /* Centrage du texte par rapport au logo */
+    transition: all 0.5s ease-in-out;
+    width: 100%;
 }
 
 .skill-details li {
-    margin-top: 6px;
-    color: var(--light-slate);
-    position: relative;
-    padding-left: 12px;
+    margin-top: 8px;
+    display: block;
+    line-height: 1.4;
 }
 
+/* Petite puce dorée centrée */
 .skill-details li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
+    content: "•";
     color: var(--gold);
+    margin-right: 5px;
 }
 
-/* Effet au survol */
+/* Effet au survol : pousse le contenu du dessous */
 .skill-item:hover .skill-details {
-    max-height: 150px; /* Permet au texte de descendre */
+    max-height: 500px;
     opacity: 1;
     margin-top: 15px;
 }
 
 .skill-item:hover .skill-circle {
-    transform: scale(0.8) translateY(-5px);
+    transform: scale(0.9);
     border-color: var(--gold);
-    box-shadow: 0 10px 30px -15px rgba(217, 182, 66, 0.3);
+}
+/* Responsive : Passage en 2 colonnes sur tablette, 1 sur mobile */
+@media (max-width: 992px) {
+    .skills-grid-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 576px) {
+    .skills-grid-row { grid-template-columns: 1fr; }
 }
 
-.skill-item:hover .skill-name {
-    color: var(--gold);
+/* Optimisation pour les grands écrans (Desktop) */
+@media (min-width: 1200px) {
+    .custom-nav .container {
+        /* On élargit l'espace entre le logo et les menus */
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .custom-nav .navbar-nav {
+        /* On augmente l'espace entre chaque onglet (01, 02, etc.) */
+        gap: 3rem !important;
+    }
+
+    .nav-link {
+        /* On augmente légèrement la taille du texte pour l'équilibre visuel */
+        font-size: 15px !important;
+        letter-spacing: 1px;
+    }
+
+    .navbar-brand img {
+        /* On agrandit un peu le logo pour qu'il ne paraisse pas minuscule */
+        height: 45px !important;
+        transition: 0.3s;
+    }
 }
