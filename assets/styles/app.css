@@ -489,80 +489,29 @@ noscript .reveal { opacity: 1 !important; }
     }
 }
 
-/* --- OPTIMISATION SPÉCIFIQUE ÉCRANS IUT (1920x1080) --- */
-@media (min-width: 1400px) {
-    /* 1. Base globale pour un effet "Zoom" propre */
-    html {
-        font-size: 18px;
-    }
-
-    /* 2. Navbar : Utilisation de toute la largeur et gros espacements */
-    .custom-nav .container {
-        max-width: 95% !important;
-        padding: 0 40px;
-    }
-    .custom-nav.navbar {
-        justify-content: space-between;
-    }
-    .custom-nav .navbar-nav {
-        gap: 6rem !important;
-    }
-    .nav-link {
-        font-size: 16px !important;
-        letter-spacing: 1.5px;
-    }
-    .navbar-brand img {
-        height: 50px !important;
-    }
-
-    /* 3. Titres de sections (01. Mes Compétences) */
-    .section-heading {
-        font-size: 38px !important;
-        margin-bottom: 60px;
-    }
-
-    /* 4. AJOUT : Lignes de catégories (/ Développement & Web, etc.) */
-    /* On cible le texte qui contient le "/" jaune et le texte gris à côté */
-    .full-section p.font-monospace,
-    .full-section .text-gold + span,
-    [class*="section-subtitle"] {
-        font-size: 1.1rem !important; /* Agrandit le titre de la catégorie */
-        margin-bottom: 2rem !important;
-        display: block;
-    }
-
-    /* Si tu utilises une classe spécifique pour le texte gris "Acquis en cursus..." */
-    .text-slate.opacity-75 {
-        font-size: 1rem !important;
-        letter-spacing: 0.5px;
-    }
-
-    /* 5. Grille et Cercles de compétences */
+/* --- RESPONSIVE TABLETTE / MOBILE --- */
+@media (max-width: 992px) {
     .skills-grid-row {
-        gap: 70px 40px;
-        max-width: 1250px;
-        margin: 0 auto 80px auto;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .skill-circle {
-        width: 125px !important;
-        height: 125px !important;
-        font-size: 3.2rem !important;
+    /* Sur mobile, on enlève le délai de 0.5s car sinon le clic ne marche pas */
+    .skill-details, .skill-item:hover .skill-details {
+        transition-delay: 0s !important;
+        transition: all 0.4s ease-out;
     }
 
-    .skill-name {
-        font-size: 1.25rem !important; /* Nom du langage bien visible */
+    /* On permet au clic (active) d'ouvrir le menu aussi bien que le hover */
+    .skill-item:active .skill-details,
+    .skill-item:focus .skill-details {
+        max-height: 500px;
+        opacity: 1;
         margin-top: 15px;
     }
+}
 
-    .skill-details {
-        font-size: 1.1rem !important; /* Liste des projets très lisible */
-        line-height: 1.6;
-    }
-
-    /* 6. Bouton CV */
-    .btn-resume {
-        padding: 12px 28px !important;
-        font-size: 15px !important;
+@media (max-width: 576px) {
+    .skills-grid-row {
+        grid-template-columns: 1fr;
     }
 }
