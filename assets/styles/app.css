@@ -392,3 +392,59 @@ section[id] {
     .reveal { opacity: 1 !important; transform: none !important; }
 }
 noscript .reveal { opacity: 1 !important; }
+
+/* --- Animation des compétences --- */
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px; /* Un peu plus large pour stabiliser le texte */
+    transition: all 0.3s ease;
+}
+
+/* Cache les détails par défaut */
+.skill-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--slate);
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 180px;
+}
+
+.skill-details li {
+    margin-top: 6px;
+    color: var(--light-slate);
+    position: relative;
+    padding-left: 12px;
+}
+
+.skill-details li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+}
+
+/* Effet au survol */
+.skill-item:hover .skill-details {
+    max-height: 150px; /* Permet au texte de descendre */
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.skill-item:hover .skill-circle {
+    transform: scale(0.8) translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px -15px rgba(217, 182, 66, 0.3);
+}
+
+.skill-item:hover .skill-name {
+    color: var(--gold);
+}
