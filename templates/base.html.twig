@@ -132,6 +132,31 @@
                 }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const langBtn = document.getElementById('lang-switch');
+            let currentLang = 'FR';
+
+            langBtn.addEventListener('click', () => {
+                // Inversion de la langue
+                currentLang = currentLang === 'FR' ? 'EN' : 'FR';
+
+                // Mise à jour du texte du bouton
+                langBtn.querySelector('.lang-text').innerText = currentLang === 'FR' ? 'EN' : 'FR';
+
+                // On parcourt tous les éléments qui ont une traduction prévue
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    if (currentLang === 'EN') {
+                        // On stocke le français pour pouvoir revenir en arrière
+                        el.setAttribute('data-fr', el.innerText);
+                        el.innerText = el.getAttribute('data-en');
+                    } else {
+                        // On remet le texte français
+                        el.innerText = el.getAttribute('data-fr');
+                    }
+                });
+            });
+        });
     </script>
 {% endblock %}
 </body>
