@@ -34,17 +34,22 @@
         <ul class="navbar-nav d-flex flex-row align-items-center mb-0 gap-3 gap-md-4">
             <li class="nav-item text-center">
                 <a class="nav-link" href="#about">
-                    <span class="nav-number-nav text-gold small">01.</span> Compétences
+                    <span class="nav-number-nav text-gold small">01.</span> Stack technique
+                </a>
+            </li>
+            <li class="nav-item text-center">
+                <a class="nav-link" href="#competences">
+                    <span class="nav-number-nav text-gold small">02.</span> Compétences
                 </a>
             </li>
             <li class="nav-item text-center">
                 <a class="nav-link" href="#projects">
-                    <span class="nav-number-nav text-gold small">02.</span> Projets
+                    <span class="nav-number-nav text-gold small">03.</span> Projets
                 </a>
             </li>
             <li class="nav-item text-center">
                 <a class="nav-link" href="#contact">
-                    <span class="nav-number-nav text-gold small">03.</span> Contact
+                    <span class="nav-number-nav text-gold small">04.</span> Contact
                 </a>
             </li>
             <li class="nav-item ms-2">
@@ -95,13 +100,25 @@
             anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
+
                 if (targetElement) {
                     e.preventDefault();
-                    targetElement.classList.add("active");
+
+                    // Calcul précis de la position de la section
+                    const navbarHeight = 80;
+                    const elementPosition = targetElement.offsetTop;
+                    const offsetPosition = elementPosition - navbarHeight;
+
                     window.scrollTo({
-                        top: targetElement.getBoundingClientRect().top + window.pageYOffset - 80,
+                        top: offsetPosition,
                         behavior: "smooth"
                     });
+
+                    // Force l'affichage des éléments Reveal de cette section
+                    setTimeout(() => {
+                        targetElement.classList.add("active");
+                        targetElement.querySelectorAll(".reveal").forEach(el => el.classList.add("active"));
+                    }, 400); // On attend que le scroll soit bien engagé
                 }
             });
         });

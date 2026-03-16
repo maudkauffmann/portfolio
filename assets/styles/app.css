@@ -515,3 +515,39 @@ noscript .reveal { opacity: 1 !important; }
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    /* On réduit la hauteur car 100px c'est trop gros pour un petit écran */
+    .custom-nav {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    /* On enlève le "row" forcé pour laisser les éléments respirer */
+    .navbar-nav {
+        flex-direction: row !important; /* On garde la ligne mais on réduit les écarts */
+        gap: 10px !important;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* On réduit la taille de la police et du logo */
+    .nav-link {
+        font-size: 11px !important;
+        padding: 5px !important;
+    }
+
+    .navbar-brand img {
+        height: 30px !important;
+    }
+
+    /* On cache ou on réduit le bouton CV pour gagner de la place */
+    .btn-resume {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+
+}
+
+

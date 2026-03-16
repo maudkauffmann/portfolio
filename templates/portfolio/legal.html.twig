@@ -1,29 +1,98 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Mentions Légales | Maud Kauffmann{% endblock %}
+
 {% block body %}
     <main class="container py-5 mt-5">
-        <div class="project-card p-5 mt-5 reveal active">
-            <h1 class="text-gold mb-4" style="font-family: 'Playfair Display';">Mentions Légales & RGPD</h1>
+        <div class="project-card p-4 p-md-5 mt-5 reveal active">
+            <h1 class="text-gold mb-5" style="font-family: 'Playfair Display';">Mentions Légales & RGPD</h1>
 
-            <div class="text-slate lead">
-                <h5 class="text-light fw-bold mt-4">1. Éditeur du site</h5>
-                <p>Maud Kauffmann — Étudiante en IUT Informatique.</p>
+            <div class="text-slate" style="font-size: 0.95rem; line-height: 1.6;">
 
-                <h5 class="text-light fw-bold mt-4">2. Hébergement</h5>
-                <p>Le site est hébergé sur un serveur privé via l'hébergeur IONOS SARL.</p>
-                <p class="small">Adresse : 7 Place de la Gare, 57200 Sarreguemines, France.</p>
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">1. Responsable de la Publication</h5>
+                    <p>
+                        <strong>Nom :</strong> Maud Kauffmann<br>
+                        <strong>Email :</strong> maudkau@gmail.com<br>
+                        <strong>Statut :</strong> Étudiante en 2e année de BUT Informatique à l'IUT de Reims
+                    </p>
+                </section>
 
-                <h5 class="text-light fw-bold mt-4">3. Protection des données (RGPD)</h5>
-                <p>
-                    Conformément au RGPD, ce site ne collecte aucune donnée personnelle à l'insu de l'utilisateur.
-                    Les informations saisies dans le formulaire de contact sont transmises via le service <strong>FormSubmit.co</strong>
-                    dans l'unique but de répondre à vos messages. Aucune donnée n'est cédée à des tiers.
-                </p>
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">2. Hébergement</h5>
+                    <p>
+                        Ce site est hébergé par <strong>IONOS SARL</strong>.<br>
+                        Adresse : 7 Place de la Gare, 57200 Sarreguemines, France.<br>
+                        Site web : <a href="https://www.ionos.fr" target="_blank" class="text-gold text-decoration-none">www.ionos.fr</a>
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">3. Propriété Intellectuelle</h5>
+                    <p>
+                        Le contenu original de ce site (textes, structure, design et photographies personnelles) est la propriété exclusive de <strong>Maud Kauffmann</strong>. Toute reproduction totale ou partielle est interdite sans accord préalable.
+                    </p>
+                    <div class="p-3 mb-3" style="background: rgba(255,255,255,0.03); border-radius: 4px; border-left: 2px solid var(--slate);">
+                        <p class="small mb-0">
+                            <strong>Note sur les logos et marques :</strong> Les logos des technologies (Symfony, PHP, C++, Python, SQL, etc.) et des plateformes sociales (LinkedIn, GitHub) sont la propriété exclusive de leurs détenteurs respectifs. Ils sont utilisés ici à titre purement illustratif pour présenter mon parcours technique.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">4. Données Personnelles et Confidentialité (RGPD)</h5>
+                    <p>
+                        Ce site respecte la vie privée de ses utilisateurs et se conforme au Règlement Général sur la Protection des Données :
+                    </p>
+                    <ul class="ps-3">
+                        <li><strong>Collecte :</strong> Aucune donnée personnelle n'est collectée automatiquement. Aucun cookie tiers n'est utilisé.</li>
+                        <li><strong>Formulaire :</strong> Les données saisies dans le formulaire de contact (nom, email, message) sont traitées via le service <strong>FormSubmit.co</strong> dans le seul but de répondre à votre demande. Ces informations ne sont jamais partagées ni revendues.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">5. Responsabilité</h5>
+                    <p>
+                        Les projets présentés sont des réalisations académiques ou personnelles fournis à titre d'exemple. Maud Kauffmann décline toute responsabilité pour d'éventuels bugs, erreurs de contenu, ou pour le contenu des sites externes liés.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">8. Conditions d'Utilisation</h5>
+                    <p>
+                        L'utilisation de ce site est gratuite et à titre informatif. L'utilisateur s'engage à respecter la loi et à ne pas utiliser le site à des fins illicites ou malveillantes.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">9. Modifications</h5>
+                    <p>
+                        Ces mentions légales peuvent être modifiées à tout moment sans préavis. Les modifications prennent effet immédiatement après leur publication sur cette page.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h5 class="text-light fw-bold">10. Contact</h5>
+                    <p>
+                        Pour toute question concernant ce site ou son contenu :
+                        <a href="mailto:maudkau@gmail.com" class="text-gold text-decoration-none">maudkau@gmail.com</a>
+                    </p>
+                </section>
+
+                <section class="mb-4 border-top border-dark pt-4 mt-5">
+                    <p class="small font-monospace">
+                        <span class="text-gold">Dernière mise à jour :</span> 16 Mars 2026<br>
+                        © 2026 Maud Kauffmann. Tous droits réservés.
+                    </p>
+                    <p style="font-size: 0.75rem; opacity: 0.5;">
+                        Design inspiré par les standards du web moderne et réalisé avec Bootstrap 5.
+                    </p>
+                </section>
             </div>
 
-            <div class="mt-5">
-                <a href="{{ path('app_home') }}" class="text-gold text-decoration-none small font-monospace">
-                    <i class="bi bi-arrow-left me-2"></i> Retour à l'accueil
+            <div class="mt-4">
+                <a href="{{ path('app_home') }}" class="github-btn px-4 py-2">
+                    <i class="bi bi-arrow-left me-2"></i> Retour au portfolio
                 </a>
             </div>
         </div>
